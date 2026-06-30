@@ -162,9 +162,6 @@ export default function Hero({ profile, onUploaded }) {
                 onChange={handleFile}
                 data-testid="hero-upload-photo-input"
               />
-              <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 glass-strong rounded-full px-4 py-1.5 text-xs font-mono-sm text-[color:var(--brand)] whitespace-nowrap">
-                {uploading ? "Uploading…" : "Available for Internships"}
-              </div>
             </div>
           </div>
         </div>
