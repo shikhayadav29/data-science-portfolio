@@ -5,37 +5,42 @@ const PROJECTS = [
   {
     title: "Temperature Prediction",
     icon: Thermometer,
-    desc: "Built a regression model to forecast daily temperatures using historical climate data and feature engineering on weather signals.",
+    desc:
+      "Built a regression model to forecast daily temperatures using historical climate data. Cleaned and engineered weather signals, evaluated multiple models and visualized predictions vs. actuals to validate performance.",
     tech: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
-    accent: "from-[#1e5ef0] to-[#0ea5e9]",
+    accent: "from-[#4d8bff] to-[#22d3ee]",
   },
   {
     title: "Quantity Analysis",
     icon: BarChart3,
-    desc: "Analyzed sales and inventory quantities across categories to surface demand trends and recommend stocking strategies.",
-    tech: ["Python", "Pandas", "Seaborn"],
-    accent: "from-[#2f8cf5] to-[#6ea8fe]",
+    desc:
+      "Analyzed sales and inventory quantities across categories to surface demand trends, identify slow-moving items and recommend smarter stocking strategies with clear, story-driven visualizations.",
+    tech: ["Python", "Pandas", "Seaborn", "EDA"],
+    accent: "from-[#6ea8fe] to-[#4d8bff]",
   },
   {
     title: "Time Series Data Analysis",
     icon: TrendingUp,
-    desc: "Explored seasonality, trend and noise in time-indexed data with decomposition, moving averages and visual storytelling.",
+    desc:
+      "Explored seasonality, trend and noise in time-indexed data using decomposition, rolling averages and visualization. Surfaced patterns useful for forecasting and anomaly spotting.",
     tech: ["Python", "NumPy", "Matplotlib", "Statsmodels"],
-    accent: "from-[#0ea5e9] to-[#1e5ef0]",
+    accent: "from-[#22d3ee] to-[#4d8bff]",
   },
   {
     title: "COVID-19 Impact in India",
     icon: Activity,
-    desc: "Built an interactive analytics dashboard in IBM Cognos to visualize state-level COVID-19 impact across cases, recoveries and deaths.",
-    tech: ["IBM Cognos", "Data Visualization", "Storytelling"],
-    accent: "from-[#1e5ef0] to-[#2f8cf5]",
+    desc:
+      "Built an interactive analytics dashboard in IBM Cognos to visualize state-level COVID-19 impact across cases, recoveries and deaths — turning raw public data into a clear executive view.",
+    tech: ["IBM Cognos", "Data Viz", "Storytelling", "Analytics"],
+    accent: "from-[#4d8bff] to-[#6ea8fe]",
   },
   {
     title: "House Price Prediction",
     icon: Home,
-    desc: "Trained a supervised model to predict house prices from structural, locational and market features using regression techniques.",
+    desc:
+      "Trained supervised regression models to predict house prices from structural, locational and market features. Compared algorithms, tuned hyperparameters and evaluated with RMSE / R².",
     tech: ["Python", "Scikit-learn", "Pandas", "Seaborn"],
-    accent: "from-[#6ea8fe] to-[#0ea5e9]",
+    accent: "from-[#6ea8fe] to-[#22d3ee]",
   },
 ];
 
@@ -51,60 +56,89 @@ export default function Projects() {
             </h2>
           </div>
           <p className="text-[color:var(--ink-soft)] max-w-md">
-            A snapshot of projects that show my data analysis and modeling workflow — from raw data
-            to deployable insight.
+            A snapshot of projects that show my data analysis and modeling workflow — from raw
+            data to deployable insight.
           </p>
         </div>
 
-        <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-12 grid md:grid-cols-2 gap-7">
           {PROJECTS.map((p, i) => (
-            <article
-              key={p.title}
-              data-testid={`project-card-${i}`}
-              className={`glass rounded-2xl p-6 card-hover border border-white/60 ${
-                i === 0 ? "lg:col-span-2 lg:row-span-1" : ""
-              }`}
-            >
-              <div
-                className={`h-32 rounded-xl bg-gradient-to-br ${p.accent} relative overflow-hidden flex items-end p-4`}
-              >
-                <div className="absolute inset-0 opacity-30 mix-blend-overlay"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.55), transparent 40%), radial-gradient(circle at 80% 60%, rgba(255,255,255,0.35), transparent 50%)",
-                  }}
-                />
-                <p.icon className="text-white/95 drop-shadow" size={36} />
-              </div>
-              <h3 className="mt-5 font-display text-2xl">{p.title}</h3>
-              <p className="mt-2 text-[color:var(--ink-soft)] text-sm leading-relaxed">{p.desc}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {p.tech.map((t) => (
-                  <span
-                    key={t}
-                    className="px-2.5 py-1 rounded-full text-[11px] font-medium chip"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <button
-                data-testid={`project-learn-more-${i}`}
-                onClick={() =>
-                  window.open("https://github.com/shikhayadav29", "_blank", "noreferrer")
-                }
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand)] group"
-              >
-                Learn More
-                <ArrowUpRight
-                  size={16}
-                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                />
-              </button>
-            </article>
+            <ProjectCard key={p.title} index={i} project={p} />
           ))}
         </div>
       </div>
     </section>
+  );
+}
+
+function ProjectCard({ index, project }) {
+  const num = String(index + 1).padStart(2, "0");
+  return (
+    <article
+      data-testid={`project-card-${index}`}
+      className="glass-strong rounded-3xl p-6 sm:p-7 card-hover flex flex-col relative overflow-hidden"
+    >
+      <div
+        className={`relative h-44 sm:h-52 rounded-2xl bg-gradient-to-br ${project.accent} overflow-hidden flex items-center justify-center`}
+      >
+        <div
+          className="absolute inset-0 opacity-40 mix-blend-overlay"
+          aria-hidden
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 25% 20%, rgba(255,255,255,0.55), transparent 45%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.30), transparent 50%)",
+          }}
+        />
+        <div
+          className="absolute inset-0 opacity-20"
+          aria-hidden
+          style={{
+            backgroundImage:
+              "linear-gradient(transparent 0 calc(100% - 1px), rgba(255,255,255,0.4) 0), linear-gradient(90deg, transparent 0 calc(100% - 1px), rgba(255,255,255,0.4) 0)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+        <project.icon className="text-white/95 drop-shadow relative z-10" size={56} strokeWidth={1.6} />
+        <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-widest uppercase bg-black/35 text-white/90 backdrop-blur">
+          Case Study
+        </span>
+      </div>
+
+      <div className="mt-5 font-mono-sm text-[color:var(--brand-2)]">
+        Project — {num}
+      </div>
+      <h3 className="mt-1 font-display text-2xl sm:text-3xl leading-tight">{project.title}</h3>
+
+      <p className="mt-3 text-[color:var(--ink-soft)] text-sm leading-relaxed">
+        {project.desc}
+      </p>
+
+      <div className="mt-5 flex flex-wrap gap-2">
+        {project.tech.map((t) => (
+          <span
+            key={t}
+            className="px-3 py-1.5 rounded-full text-[11px] font-semibold tracking-wide chip"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <div className="mt-auto pt-6">
+        <button
+          data-testid={`project-learn-more-${index}`}
+          onClick={() =>
+            window.open("https://github.com/shikhayadav29", "_blank", "noreferrer")
+          }
+          className="learn-more-btn inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold group"
+        >
+          Learn More
+          <ArrowUpRight
+            size={16}
+            className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+          />
+        </button>
+      </div>
+    </article>
   );
 }
