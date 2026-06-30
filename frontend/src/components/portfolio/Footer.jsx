@@ -50,7 +50,7 @@ export default function Footer() {
                   href="https://www.linkedin.com/in/shikha-yadav-4769b9372"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white border border-[color:var(--line)] grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand)] transition"
+                  className="w-10 h-10 rounded-full chip grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand-2)] transition"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={16} />
@@ -60,7 +60,7 @@ export default function Footer() {
                   href="https://github.com/shikhayadav29"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-10 h-10 rounded-full bg-white border border-[color:var(--line)] grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand)] transition"
+                  className="w-10 h-10 rounded-full chip grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand-2)] transition"
                   aria-label="GitHub"
                 >
                   <Github size={16} />
@@ -68,7 +68,7 @@ export default function Footer() {
                 <a
                   data-testid="footer-social-email"
                   href="mailto:shikha29072005@gmail.com"
-                  className="w-10 h-10 rounded-full bg-white border border-[color:var(--line)] grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand)] transition"
+                  className="w-10 h-10 rounded-full chip grid place-items-center text-[color:var(--ink)] hover:text-[color:var(--brand-2)] transition"
                   aria-label="Email"
                 >
                   <Mail size={16} />

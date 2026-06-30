@@ -116,7 +116,7 @@ export default function Contact() {
                 onChange={onChange}
                 rows={5}
                 placeholder="Tell me a bit about the opportunity or idea…"
-                className="mt-2 w-full rounded-xl bg-white/80 border border-[color:var(--line)] px-4 py-3 outline-none focus:border-[color:var(--brand)] focus:ring-4 focus:ring-[color:var(--brand)]/10 transition"
+                className="input-dark mt-2 w-full rounded-xl px-4 py-3"
               />
             </div>
             <button
@@ -177,7 +177,7 @@ function Field({ label, testId, ...props }) {
       <input
         data-testid={testId}
         {...props}
-        className="mt-2 w-full rounded-xl bg-white/80 border border-[color:var(--line)] px-4 py-3 outline-none focus:border-[color:var(--brand)] focus:ring-4 focus:ring-[color:var(--brand)]/10 transition"
+        className="input-dark mt-2 w-full rounded-xl px-4 py-3"
       />
     </div>
   );

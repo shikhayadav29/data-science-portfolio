@@ -53,7 +53,7 @@ export default function Education() {
                   ].map((c) => (
                     <span
                       key={c}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-white/70 border border-[color:var(--line)] text-[color:var(--ink-soft)]"
+                      className="px-3 py-1 rounded-full text-xs font-medium chip"
                     >
                       {c}
                     </span>
@@ -89,7 +89,7 @@ export default function Education() {
 
 function Badge({ icon: Icon, label }) {
   return (
-    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-[color:var(--line)] text-[color:var(--ink-soft)]">
+    <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full chip">
       <Icon size={14} /> {label}
     </span>
   );

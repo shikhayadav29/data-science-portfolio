@@ -52,7 +52,7 @@ export default function Hero({ profile, onUploaded }) {
             <h1 className="mt-4 font-display text-5xl sm:text-6xl lg:text-7xl leading-[1.05] fade-up d-1">
               Hi, I'm <span className="text-gradient">Shikha Yadav</span>
               <span className="block text-[color:var(--ink-soft)] text-2xl sm:text-3xl mt-3 font-normal">
-                Aspiring Data Scientist · AI &amp; ML Enthusiast
+                Aspiring Data Scientist
               </span>
             </h1>
             <p className="mt-6 text-[color:var(--ink-soft)] text-base sm:text-lg leading-relaxed max-w-2xl fade-up d-2">
@@ -124,7 +124,7 @@ export default function Hero({ profile, onUploaded }) {
             <div className="relative">
               <div className="absolute -inset-10 brand-gradient opacity-20 blur-3xl rounded-full" aria-hidden />
               <div className="photo-ring w-[280px] h-[280px] sm:w-[340px] sm:h-[340px]">
-                <div className="photo-inner w-full h-full bg-white flex items-center justify-center">
+                <div className="photo-inner w-full h-full flex items-center justify-center">
                   {photoSrc ? (
                     <img
                       data-testid="hero-photo-img"

@@ -55,7 +55,7 @@ export default function Skills() {
               className="glass rounded-2xl p-5 card-hover"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-white border border-[color:var(--line)] grid place-items-center text-[color:var(--brand)] shadow-sm">
+                <div className="w-10 h-10 rounded-xl chip grid place-items-center text-[color:var(--brand-2)] shadow-sm">
                   <s.icon size={18} />
                 </div>
                 <div className="flex-1">
