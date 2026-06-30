@@ -177,12 +177,17 @@ export default function Hero({ profile, onUploaded }) {
                   style={{ padding: "6px" }}
                 >
                   {photoSrc ? (
-                    <img
+                    <div
                       data-testid="hero-photo-img"
-                      src={photoSrc}
-                      alt="Shikha Yadav"
-                      className="w-full h-full object-cover rounded-full"
-                      style={{ objectPosition: "50% 5%" }}
+                      role="img"
+                      aria-label="Shikha Yadav"
+                      className="w-full h-full rounded-full"
+                      style={{
+                        backgroundImage: `url(${photoSrc})`,
+                        backgroundSize: "130% auto",
+                        backgroundPosition: "50% 18%",
+                        backgroundRepeat: "no-repeat",
+                      }}
                     />
                   ) : (
                     <div className="text-center px-6">
